@@ -11,12 +11,11 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
+// function to to run to initialize program
 function init () {
 
     // Team array
     let team = [];
-
 
     // function to handle generating manager - first bc we need a manager
     function createManager() {
@@ -65,10 +64,6 @@ function init () {
                   return "Please enter at least one character.";
                 }
               }
-            /* {ask for id},
-              {ask for email},
-              {ask for office number}
-             */
           ]).then(answers => {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
             // push to team array
@@ -81,7 +76,6 @@ function init () {
 
     // function that asks what type of employee they would like to create next
     function createTeam(){
-        // similar setup to what we have listed above
         inquirer.prompt([
             // question asking what we should make next
                 // choices(engineer, intern, I dont want to add anything else)
@@ -97,21 +91,12 @@ function init () {
                 }
                   },
         ]).then(userChoice => {
-            /* conditional that decides which of the below functions to call
-                based on userChoice.
-             
-
-                - If none of the choices (engineer or employee) have been chosen default to buildTeam()
-               
-            */
            if (userChoice.nextTeamMember === "Add an Engineer") {
                 // call the question function and create new engineer obj
                 createEngineer();
-                
            } else if (userChoice.nextTeamMember === "Add an Intern") {
             // call the question function and create new intern obj
                 createIntern();
-            //  Push to the team array
            } else {
             // default - buildTeam()
             buildTeam();
@@ -228,13 +213,13 @@ function init () {
         })
     }
 
-    // function to buildTeam - will use fs.writeFileSync & pass in the outputPath created above, call to render (dont forget to pass in the employee array), & "utf-8"
+    // function to buildTeam
     function buildTeam() {
 
         return fs.writeFileSync(outputPath,render(team),'utf-8');
     }
         
-    createManager(); // starts of the whole chain of events. 
+    createManager(); 
 }
 
 init();
