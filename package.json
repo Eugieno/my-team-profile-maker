@@ -1,0 +1,27 @@
+{
+  "name": "my-team-profile-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eugieno/my-team-profile-maker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eugieno/my-team-profile-maker/issues"
+  },
+  "homepage": "https://github.com/Eugieno/my-team-profile-maker#readme",
+  "dependencies": {
+    "inquirer": "^6.0.0",
+    "jest": "^29.4.3"
+  }
+}
