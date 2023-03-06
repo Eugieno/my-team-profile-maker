@@ -38,7 +38,7 @@
   
   ## License
   Copyright &copy; 2023 Oluyemi Eugene Akinbamini       
-  This project is [MIT](../my-readme-maker/assets/license-notice/MIT.md) licensed
+  This project is [MIT](/LICENSE) licensed
   
   ## Contributing
   * Fork the repository and create your branch from main. 
